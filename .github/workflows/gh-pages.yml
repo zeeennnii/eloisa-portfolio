@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Copy Resume
-        run: cp src/assets/resume.pdf dist/resume.pdf
+        run: cp src/assets/Resume.pdf dist/Resume.pdf
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
