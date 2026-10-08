@@ -14,10 +14,6 @@
   <link rel="icon" type="image/png" href="src/assets/favicon.png" />
 
   <style>
-    /* =========================
-       GLOBAL
-    ========================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -51,9 +47,8 @@
       margin: 0 auto;
     }
 
-
     /* =========================
-       HEADER / NAVIGATION
+       NAVIGATION
     ========================= */
 
     header {
@@ -95,7 +90,6 @@
     .nav-links a:hover {
       color: #7d4ac7;
     }
-
 
     /* =========================
        HERO
@@ -212,7 +206,6 @@
       transform: translateY(-2px);
     }
 
-
     /* =========================
        GENERAL SECTIONS
     ========================= */
@@ -247,7 +240,6 @@
       border-radius: 5px;
       margin: 16px auto 0;
     }
-
 
     /* =========================
        ABOUT
@@ -303,7 +295,6 @@
     .about-text .button {
       margin-top: 5px;
     }
-
 
     /* =========================
        ARTWORK
@@ -373,7 +364,6 @@
       margin-bottom: 6px;
     }
 
-
     /* =========================
        SKILLS
     ========================= */
@@ -384,15 +374,15 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .skill-card {
-      padding: 27px;
+      padding: 30px;
       border-radius: 14px;
       border: 1px solid #e9e4f0;
-      background: #ffffff;
+      background: #faf9fc;
       transition: 0.3s ease;
     }
 
@@ -402,24 +392,16 @@
       box-shadow: 0 10px 25px rgba(125, 74, 199, 0.08);
     }
 
-    .skill-number {
-      color: #7d4ac7;
-      font-size: 0.8rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
     .skill-card h3 {
       font-size: 1.2rem;
-      color: #282828;
-      margin-bottom: 10px;
+      color: #7d4ac7;
+      margin-bottom: 18px;
     }
 
     .skill-card p {
-      color: #6d6d6d;
-      font-size: 0.92rem;
+      color: #444444;
+      font-size: 1rem;
     }
-
 
     /* =========================
        RESUME
@@ -452,7 +434,6 @@
       color: #6c6c6c;
       margin-bottom: 25px;
     }
-
 
     /* =========================
        CONTACT
@@ -497,7 +478,6 @@
       text-decoration: underline;
     }
 
-
     /* =========================
        FOOTER
     ========================= */
@@ -514,13 +494,11 @@
       font-size: 0.85rem;
     }
 
-
     /* =========================
        RESPONSIVE
     ========================= */
 
     @media (max-width: 850px) {
-
       .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -542,12 +520,9 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
     }
 
-
     @media (max-width: 650px) {
-
       nav {
         height: auto;
         padding: 18px 0;
@@ -585,11 +560,9 @@
       .resume-box {
         padding: 30px 20px;
       }
-
     }
   </style>
 </head>
-
 
 <body>
 
@@ -745,13 +718,12 @@
 
           <p>
             My goal is to pursue a career related to animation
-            and digital art while continuing to explore creative
-            and technological fields.
+            and digital art.
           </p>
 
           <p>
-            I mainly use Krita, Adobe Photoshop, and other digital
-            art tools for my artwork and creative projects.
+            I mainly use Krita, Adobe Photoshop, and ibisPaint
+            for my digital artwork.
           </p>
 
           <a
@@ -796,8 +768,6 @@
       <div class="artwork-grid">
 
 
-        <!-- ARTWORK 1 -->
-
         <div class="art-card">
 
           <div class="art-image">
@@ -829,8 +799,6 @@
         </div>
 
 
-        <!-- ARTWORK 2 -->
-
         <div class="art-card">
 
           <div class="art-image">
@@ -861,8 +829,6 @@
 
         </div>
 
-
-        <!-- ARTWORK 3 -->
 
         <div class="art-card">
 
@@ -913,11 +879,11 @@
       <div class="section-title">
 
         <h2>
-          Skills &amp; Tools
+          Skills
         </h2>
 
         <p>
-          My creative, technical, and professional skills.
+          My creative skills and tools.
         </p>
 
       </div>
@@ -926,144 +892,43 @@
       <div class="skills-grid">
 
 
-        <!-- UI/UX -->
-
         <div class="skill-card">
 
-          <div class="skill-number">
-            01
-          </div>
-
           <h3>
-            UI/UX Design
+            Digital Art
           </h3>
 
           <p>
-            UI design, UX design fundamentals, wireframing,
-            prototyping, responsive design, user-centered design,
-            and design systems.
+            Digital Illustration, Character Design,
+            Sketching, Visual Storytelling,
+            Composition, Color Theory
           </p>
 
         </div>
 
 
-        <!-- VISUAL DESIGN -->
-
         <div class="skill-card">
 
-          <div class="skill-number">
-            02
-          </div>
-
           <h3>
-            Visual Design
+            Tools
           </h3>
 
           <p>
-            Visual hierarchy, layout and composition, typography,
-            color theory, design consistency, visual quality
-            assurance, and digital asset creation.
+            Krita, Adobe Photoshop, ibisPaint
           </p>
 
         </div>
 
 
-        <!-- DESIGN TOOLS -->
-
         <div class="skill-card">
 
-          <div class="skill-number">
-            03
-          </div>
-
           <h3>
-            Design Tools
+            Other Skills
           </h3>
 
           <p>
-            Figma, Canva, GIMP, Krita, Adobe Photoshop,
-            and other digital creative tools.
-          </p>
-
-        </div>
-
-
-        <!-- WEB DEVELOPMENT -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            04
-          </div>
-
-          <h3>
-            Web Development
-          </h3>
-
-          <p>
-            HTML, CSS, JavaScript, responsive web design,
-            frontend development, and REST API integration.
-          </p>
-
-        </div>
-
-
-        <!-- DATABASE -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            05
-          </div>
-
-          <h3>
-            Database Management
-          </h3>
-
-          <p>
-            PostgreSQL, MySQL, SQL, database design,
-            normalization, and CRUD operations.
-          </p>
-
-        </div>
-
-
-        <!-- PROGRAMMING -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            06
-          </div>
-
-          <h3>
-            Programming &amp; Development
-          </h3>
-
-          <p>
-            Java, C#, Spring Boot, ASP.NET Core,
-            object-oriented programming, and Git/GitHub.
-          </p>
-
-        </div>
-
-
-        <!-- PROFESSIONAL -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            07
-          </div>
-
-          <h3>
-            Technical &amp; Professional
-          </h3>
-
-          <p>
-            Requirements analysis, problem solving, technical
-            documentation, attention to detail, and
-            cross-functional collaboration.
+            Creativity, Attention to Detail,
+            Problem Solving, Visual Communication
           </p>
 
         </div>
