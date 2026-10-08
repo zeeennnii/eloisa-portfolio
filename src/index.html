@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Eloisa Rebato | Digital Artist & Aspiring Animator</title>
 
   <meta
     name="description"
-    content="Portfolio of Eloisa Rebato, Digital Artist and Aspiring Animator."
-  >
+    content="Portfolio of Eloisa Rebato, a Digital Artist and Aspiring Animator."
+  />
+
+  <link rel="icon" type="image/png" href="src/assets/favicon.png" />
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: #fff;
+      color: #222;
+      background: #ffffff;
     }
 
     a {
@@ -36,119 +41,125 @@
       display: block;
     }
 
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
     /* NAVIGATION */
-    nav {
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #eeeeee;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      padding: 15px 8%;
     }
 
-    .nav-container {
-      max-width: 1100px;
-      margin: auto;
+    nav {
+      min-height: 70px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
       font-size: 1.3rem;
-      font-weight: bold;
+      font-weight: 700;
+      color: #222;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
       list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #444;
+      transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-      text-decoration: underline;
+      color: #000;
     }
 
     /* HERO */
     .hero {
       min-height: 85vh;
       display: flex;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 60px 20px;
-      background: #f7f7f7;
+      background: #fafafa;
     }
 
     .hero-content {
-      max-width: 800px;
+      padding: 80px 0;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: #111;
     }
 
     .hero h2 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-bottom: 20px;
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 25px;
     }
 
     .hero p {
+      max-width: 700px;
       font-size: 1.05rem;
-      color: #555;
+      color: #666;
       margin-bottom: 30px;
     }
 
-    /* BUTTONS */
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
     .button {
       display: inline-block;
-      padding: 12px 24px;
-      margin: 5px;
-      border: 1px solid #333;
-      border-radius: 5px;
-      background: #333;
+      padding: 12px 22px;
+      border: 1px solid #222;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: #222;
       color: #fff;
-      transition: 0.3s;
     }
 
     .button:hover {
-      background: #555;
-    }
-
-    .button-outline {
-      background: transparent;
-      color: #333;
-    }
-
-    .button-outline:hover {
-      background: #333;
-      color: #fff;
+      transform: translateY(-2px);
+      opacity: 0.85;
     }
 
     /* SECTIONS */
     section {
-      padding: 80px 8%;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
+      padding: 90px 0;
     }
 
     .section-title {
-      text-align: center;
-      margin-bottom: 45px;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #111;
     }
 
-    .section-title h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
+    .section-description {
       color: #666;
+      max-width: 750px;
+      margin-bottom: 40px;
     }
 
     /* ABOUT */
@@ -156,19 +167,25 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
-      align-items: center;
+      align-items: start;
     }
 
-    .about-image img {
-      width: 100%;
-      max-width: 450px;
-      margin: auto;
-      border-radius: 10px;
-    }
-
-    .about-text p {
-      margin-bottom: 15px;
+    .about-content p {
       color: #555;
+      margin-bottom: 15px;
+    }
+
+    .about-list {
+      list-style: none;
+    }
+
+    .about-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .about-list strong {
+      color: #222;
     }
 
     /* ARTWORK */
@@ -179,17 +196,23 @@
     }
 
     .artwork-card {
-      border: 1px solid #ddd;
+      border: 1px solid #e5e5e5;
       border-radius: 10px;
       overflow: hidden;
       background: #fff;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: 0.2s ease;
+    }
+
+    .artwork-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     }
 
     .artwork-card img {
       width: 100%;
       height: 300px;
       object-fit: cover;
+      background: #f5f5f5;
     }
 
     .artwork-info {
@@ -198,91 +221,116 @@
 
     .artwork-info h3 {
       margin-bottom: 8px;
+      font-size: 1.2rem;
     }
 
     .artwork-info p {
       color: #666;
+      font-size: 0.95rem;
     }
 
     /* SKILLS */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     .skill-card {
-      border: 1px solid #ddd;
+      border: 1px solid #e5e5e5;
       border-radius: 10px;
       padding: 25px;
+      background: #fff;
     }
 
     .skill-card h3 {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+      color: #222;
     }
 
-    .skill-card ul {
-      padding-left: 20px;
-      color: #555;
-    }
-
-    .skill-card li {
-      margin-bottom: 8px;
+    .skill-card p {
+      color: #666;
+      font-size: 0.95rem;
     }
 
     /* RESUME */
     .resume-section {
-      text-align: center;
-      background: #f7f7f7;
+      background: #fafafa;
     }
 
-    .resume-section p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      color: #555;
+    .resume-box {
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 35px;
+      background: #fff;
+      max-width: 750px;
+    }
+
+    .resume-box p {
+      color: #666;
+      margin-bottom: 25px;
     }
 
     /* CONTACT */
-    .contact-content {
-      text-align: center;
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
 
-    .contact-content p {
-      margin-bottom: 15px;
-      color: #555;
+    .contact-item {
+      padding: 25px;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+    }
+
+    .contact-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .contact-item p {
+      color: #666;
+      word-break: break-word;
+    }
+
+    .contact-item a {
+      color: #333;
+      text-decoration: underline;
     }
 
     /* FOOTER */
     footer {
-      text-align: center;
-      padding: 25px;
-      background: #333;
+      padding: 30px 0;
+      background: #222;
       color: #fff;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #ddd;
     }
 
     /* MOBILE */
-    @media (max-width: 768px) {
-
-      .nav-container {
+    @media (max-width: 800px) {
+      nav {
         flex-direction: column;
-        gap: 15px;
+        justify-content: center;
+        padding: 20px 0;
       }
 
       .nav-links {
-        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
       }
 
-      .hero h1 {
-        font-size: 2.2rem;
+      .hero {
+        min-height: auto;
       }
 
-      .hero h2 {
-        font-size: 1.2rem;
-      }
-
-      .about-content {
+      .about-content,
+      .contact-box {
         grid-template-columns: 1fr;
       }
 
@@ -293,6 +341,12 @@
       .skills-grid {
         grid-template-columns: 1fr;
       }
+
+      .artwork-card img {
+        height: auto;
+        max-height: 450px;
+        object-fit: contain;
+      }
     }
   </style>
 </head>
@@ -300,394 +354,333 @@
 <body>
 
   <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-container">
-
-      <div class="logo">
-        Eloisa Rebato
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#artwork">Artwork</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-    </div>
-  </nav>
-
-
-  <!-- HERO -->
-  <section id="home" class="hero">
-
-    <div class="hero-content">
-
-      <h1>
-        Hi, I'm Eloisa Rebato
-      </h1>
-
-      <h2>
-        Digital Artist & Aspiring Animator
-      </h2>
-
-      <p>
-        I am a BSIT student and aspiring digital artist and animator
-        interested in digital illustration, character design,
-        animation, and visual storytelling.
-      </p>
-
-      <a href="#artwork" class="button">
-        View My Artwork
-      </a>
-
-      <a href="#contact" class="button button-outline">
-        Contact Me
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-  <section id="about">
-
+  <header>
     <div class="container">
+      <nav>
+        <a href="#home" class="logo">Eloisa Rebato</a>
 
-      <div class="section-title">
-
-        <h2>
-          About Me
-        </h2>
-
-        <p>
-          Aspiring Digital Artist & Animator
-        </p>
-
-      </div>
-
-      <div class="about-content">
-
-        <div class="about-image">
-
-          <img
-            src="assets/FAA.png"
-            alt="Eloisa Rebato Digital Artwork"
-          >
-
-        </div>
-
-        <div class="about-text">
-
-          <p>
-            Hello! I'm Eloisa Rebato, a BSIT student and aspiring
-            Digital Artist and Animator.
-          </p>
-
-          <p>
-            I enjoy creating digital artworks, character designs,
-            illustrations, and visual concepts.
-          </p>
-
-          <p>
-            I also accept art commissions where I create artworks
-            based on clients' ideas and preferred concepts.
-          </p>
-
-          <p>
-            My goal is to continue improving my artistic skills
-            and explore animation and visual storytelling.
-          </p>
-
-        </div>
-
-      </div>
-
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#artwork">Artwork</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-  </section>
+  <!-- HOME -->
+  <main>
 
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
 
-  <!-- ARTWORK -->
-  <section id="artwork">
+          <h1>Eloisa Rebato</h1>
 
-    <div class="container">
+          <h2>Digital Artist &amp; Aspiring Animator</h2>
 
-      <div class="section-title">
+          <p>
+            Welcome to my portfolio. I am a creative student interested in
+            digital art, animation, UI/UX design, and technology. This
+            portfolio showcases some of my artwork, skills, and projects.
+          </p>
 
-        <h2>
-          My Artwork
-        </h2>
+          <div class="buttons">
+            <a href="#artwork" class="button primary">
+              View My Artwork
+            </a>
 
-        <p>
-          A selection of my digital illustrations and artwork.
-        </p>
-
-      </div>
-
-      <div class="artwork-grid">
-
-
-        <!-- ARTWORK 1 -->
-        <div class="artwork-card">
-
-          <img
-            src="assets/FAA.png"
-            alt="Digital Illustration"
-          >
-
-          <div class="artwork-info">
-
-            <h3>
-              Digital Illustration
-            </h3>
-
-            <p>
-              Digital illustration created as part of my
-              personal artwork collection.
-            </p>
-
+            <a href="#resume" class="button">
+              View Resume
+            </a>
           </div>
 
         </div>
+      </div>
+    </section>
 
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
 
-        <!-- ARTWORK 2 -->
-        <div class="artwork-card">
+        <h2 class="section-title">About Me</h2>
 
-          <img
-            src="assets/pie.png"
-            alt="Digital Artwork"
-          >
+        <p class="section-description">
+          A short introduction about my background, interests, and goals.
+        </p>
 
-          <div class="artwork-info">
+        <div class="about-content">
 
-            <h3>
-              Digital Artwork
-            </h3>
-
+          <div>
             <p>
-              Personal digital artwork focused on composition,
-              color, and visual presentation.
+              I am Eloisa Rebato, a Digital Artist and Aspiring Animator
+              interested in combining creativity and technology.
             </p>
 
+            <p>
+              I enjoy creating digital artwork while also learning about
+              user interface design, web development, and other areas of
+              digital technology.
+            </p>
+
+            <p>
+              My goal is to continue improving my creative and technical
+              skills and eventually build meaningful digital experiences.
+            </p>
+          </div>
+
+          <div>
+            <ul class="about-list">
+              <li>
+                <strong>Role:</strong>
+                Digital Artist &amp; Aspiring Animator
+              </li>
+
+              <li>
+                <strong>Interests:</strong>
+                Digital Art, Animation, UI/UX Design
+              </li>
+
+              <li>
+                <strong>Tools:</strong>
+                Figma, Canva, GIMP, Krita, Adobe Photoshop
+              </li>
+
+              <li>
+                <strong>Development:</strong>
+                HTML, CSS, JavaScript, Java, C#
+              </li>
+            </ul>
           </div>
 
         </div>
+      </div>
+    </section>
 
+    <!-- ARTWORK -->
+    <section id="artwork">
+      <div class="container">
 
-        <!-- ARTWORK 3 -->
-        <div class="artwork-card">
+        <h2 class="section-title">Artwork</h2>
 
-          <img
-            src="assets/sketch3.jpg"
-            alt="Character Sketch"
-          >
+        <p class="section-description">
+          Here are some of my digital artworks and creative works.
+        </p>
 
-          <div class="artwork-info">
+        <div class="artwork-grid">
 
-            <h3>
-              Character Sketch
-            </h3>
+          <article class="artwork-card">
+            <img
+              src="src/assets/FAA.png"
+              alt="Digital artwork by Eloisa Rebato"
+            />
+
+            <div class="artwork-info">
+              <h3>Digital Artwork 01</h3>
+
+              <p>
+                A digital artwork created as part of my creative portfolio.
+              </p>
+            </div>
+          </article>
+
+          <article class="artwork-card">
+            <img
+              src="src/assets/pie.png"
+              alt="Digital artwork by Eloisa Rebato"
+            />
+
+            <div class="artwork-info">
+              <h3>Digital Artwork 02</h3>
+
+              <p>
+                A creative digital illustration showcasing visual design.
+              </p>
+            </div>
+          </article>
+
+          <article class="artwork-card">
+            <img
+              src="src/assets/sketch3.jpg"
+              alt="Sketch artwork by Eloisa Rebato"
+            />
+
+            <div class="artwork-info">
+              <h3>Sketch</h3>
+
+              <p>
+                A sketch exploring ideas, composition, and artistic expression.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+
+        <h2 class="section-title">Skills</h2>
+
+        <p class="section-description">
+          My current technical, creative, and professional skills.
+        </p>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <h3>UI/UX Design</h3>
 
             <p>
-              Character sketch created to practice drawing,
-              character development, and visual storytelling.
+              UI design, UX design fundamentals, wireframing, prototyping,
+              responsive design, user-centered design, and design systems.
             </p>
+          </div>
 
+          <div class="skill-card">
+            <h3>Visual Design</h3>
+
+            <p>
+              Visual hierarchy, layout and composition, typography,
+              color theory, design consistency, visual quality assurance,
+              and digital asset creation.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Design Tools</h3>
+
+            <p>
+              Figma, Canva, GIMP, Krita, and Adobe Photoshop.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Web Development</h3>
+
+            <p>
+              HTML, CSS, JavaScript, responsive web design,
+              frontend development, and REST API integration.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Database Management</h3>
+
+            <p>
+              PostgreSQL, MySQL, SQL, database design, normalization,
+              and CRUD operations.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Programming &amp; Development</h3>
+
+            <p>
+              Java, C#, Spring Boot, ASP.NET Core,
+              object-oriented programming, and Git/GitHub.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Technical &amp; Professional</h3>
+
+            <p>
+              Requirements analysis, problem solving, technical
+              documentation, attention to detail, and cross-functional
+              collaboration.
+            </p>
           </div>
 
         </div>
-
       </div>
+    </section>
 
-    </div>
+    <!-- RESUME -->
+    <section id="resume" class="resume-section">
+      <div class="container">
 
-  </section>
+        <h2 class="section-title">Resume</h2>
 
-
-  <!-- SKILLS -->
-  <section id="skills">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Skills
-        </h2>
-
-        <p>
-          My creative and technical skills.
+        <p class="section-description">
+          View my resume for more information about my education,
+          projects, skills, and experience.
         </p>
 
-      </div>
+        <div class="resume-box">
 
-      <div class="skills-grid">
+          <p>
+            My resume is available as a PDF file.
+          </p>
 
-
-        <!-- DIGITAL ART -->
-        <div class="skill-card">
-
-          <h3>
-            Digital Art
-          </h3>
-
-          <ul>
-
-            <li>Digital Illustration</li>
-            <li>Character Design</li>
-            <li>Sketching</li>
-            <li>Visual Storytelling</li>
-            <li>Composition</li>
-            <li>Color Theory</li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- TOOLS -->
-        <div class="skill-card">
-
-          <h3>
-            Art Tools
-          </h3>
-
-          <ul>
-
-            <li>Krita</li>
-            <li>Adobe Photoshop</li>
-            <li>ibisPaint</li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- OTHER SKILLS -->
-        <div class="skill-card">
-
-          <h3>
-            Other Skills
-          </h3>
-
-          <ul>
-
-            <li>Creativity</li>
-            <li>Attention to Detail</li>
-            <li>Problem Solving</li>
-            <li>Visual Communication</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- RESUME -->
-  <section id="resume" class="resume-section">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Resume
-        </h2>
-
-        <p>
-          View my ATS-friendly resume.
-        </p>
-
-      </div>
-
-      <p>
-        My resume contains my education, experience,
-        projects, skills, and contact information.
-      </p>
-
-      <a
-        href="assets/Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button"
-      >
-        View Resume
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-  <section id="contact">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Contact Me
-        </h2>
-
-        <p>
-          Feel free to reach out for commissions,
-          collaborations, or inquiries.
-        </p>
-
-      </div>
-
-      <div class="contact-content">
-
-        <p>
-          Email:
-          <strong>
-            rebatoeloisa@gmail.com
-          </strong>
-        </p>
-
-        <p>
-          GitHub:
+          <!-- IMPORTANT: filename is Resume.pdf with capital R -->
           <a
-            href="https://github.com/zeeennnii"
+            href="src/assets/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            class="button primary"
           >
-            github.com/zeeennnii
+            View Resume
           </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+
+        <h2 class="section-title">Contact</h2>
+
+        <p class="section-description">
+          Feel free to connect with me through email or GitHub.
         </p>
 
-        <a
-          href="mailto:rebatoeloisa@gmail.com"
-          class="button"
-        >
-          Email Me
-        </a>
+        <div class="contact-box">
 
+          <div class="contact-item">
+            <h3>Email</h3>
+
+            <p>
+              <a href="mailto:rebatoeloisa@gmail.com">
+                rebatoeloisa@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <div class="contact-item">
+            <h3>GitHub</h3>
+
+            <p>
+              <a
+                href="https://github.com/zeeennnii"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/zeeennnii
+              </a>
+            </p>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-    </div>
-
-  </section>
-
+  </main>
 
   <!-- FOOTER -->
   <footer>
-
-    <p>
-      © 2026 Eloisa Rebato. All Rights Reserved.
-    </p>
-
+    <div class="container">
+      <p>
+        &copy; 2026 Eloisa Rebato. All rights reserved.
+      </p>
+    </div>
   </footer>
 
 </body>
