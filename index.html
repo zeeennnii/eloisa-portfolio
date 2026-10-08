@@ -14,6 +14,10 @@
   <link rel="icon" type="image/png" href="src/assets/favicon.png" />
 
   <style>
+    /* =========================
+       GLOBAL
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -25,10 +29,10 @@
     }
 
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f8f7f4;
-      color: #252525;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #333333;
+      line-height: 1.7;
     }
 
     a {
@@ -37,30 +41,32 @@
     }
 
     img {
-      display: block;
       max-width: 100%;
+      display: block;
     }
 
     .container {
-      width: min(1120px, 90%);
-      margin: auto;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
+
     /* =========================
-       NAVIGATION
+       HEADER / NAVIGATION
     ========================= */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(248, 247, 244, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e8e5df;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #eeeeee;
+      backdrop-filter: blur(8px);
     }
 
     nav {
-      height: 76px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -68,39 +74,43 @@
 
     .logo {
       font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .logo span {
-      color: #8c6b4f;
+      font-weight: 700;
+      color: #222222;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 30px;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      color: #555;
-      transition: 0.25s;
+      color: #444444;
+      transition: 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: #8c6b4f;
+      color: #7d4ac7;
     }
+
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
-      min-height: calc(100vh - 76px);
+      min-height: 680px;
       display: flex;
       align-items: center;
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f9f7ff 55%,
+        #eee8ff 100%
+      );
       position: relative;
       overflow: hidden;
     }
@@ -108,138 +118,136 @@
     .hero::before {
       content: "";
       position: absolute;
-      width: 420px;
-      height: 420px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
-      background: #e9ded2;
-      right: -120px;
-      top: 70px;
-      opacity: 0.65;
+      background: rgba(151, 105, 214, 0.08);
+      top: -100px;
+      right: -80px;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      background: #ddd8cc;
-      left: -80px;
-      bottom: -70px;
-      opacity: 0.7;
+      background: rgba(151, 105, 214, 0.06);
+      bottom: -80px;
+      left: -60px;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 850px;
-      padding: 100px 0;
+      max-width: 760px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 22px;
-      padding: 8px 16px;
-      border: 1px solid #d8cabc;
-      border-radius: 30px;
-      color: #8c6b4f;
-      background: #f4eee8;
-      font-size: 0.82rem;
+    .hero-small {
+      color: #7d4ac7;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
     }
 
     .hero h1 {
-      font-size: clamp(3.5rem, 8vw, 6.5rem);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      margin-bottom: 25px;
-      color: #1e1e1e;
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      line-height: 1;
+      color: #202020;
+      margin-bottom: 18px;
+      letter-spacing: -3px;
     }
 
     .hero h1 span {
-      color: #8c6b4f;
+      color: #7d4ac7;
     }
 
-    .hero-subtitle {
-      font-size: clamp(1.2rem, 3vw, 1.7rem);
-      font-weight: 600;
-      color: #555;
+    .hero h2 {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 500;
+      color: #555555;
       margin-bottom: 20px;
     }
 
-    .hero-description {
+    .hero p {
       max-width: 680px;
-      color: #777;
+      color: #666666;
       font-size: 1.05rem;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
-      gap: 14px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 22px;
-      border-radius: 8px;
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 7px;
       font-weight: 700;
-      font-size: 0.95rem;
-      border: 1px solid #292929;
       transition: 0.25s ease;
     }
 
-    .button.primary {
-      background: #292929;
-      color: white;
+    .button-primary {
+      background: #7d4ac7;
+      color: #ffffff;
     }
 
-    .button.secondary {
-      background: transparent;
-      color: #292929;
+    .button-primary:hover {
+      background: #6938ad;
+      transform: translateY(-2px);
     }
 
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    .button-outline {
+      border: 1px solid #7d4ac7;
+      color: #7d4ac7;
+      background: #ffffff;
     }
+
+    .button-outline:hover {
+      background: #f3edff;
+      transform: translateY(-2px);
+    }
+
 
     /* =========================
-       SECTIONS
+       GENERAL SECTIONS
     ========================= */
 
     section {
-      padding: 110px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 50px;
-    }
-
-    .section-label {
-      color: #8c6b4f;
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
+      padding: 100px 0;
     }
 
     .section-title {
-      font-size: clamp(2.2rem, 5vw, 3.3rem);
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin-bottom: 15px;
+      text-align: center;
+      margin-bottom: 60px;
     }
 
-    .section-description {
-      max-width: 700px;
-      color: #777;
+    .section-title h2 {
+      font-size: 2.4rem;
+      color: #222222;
+      margin-bottom: 10px;
     }
+
+    .section-title p {
+      color: #777777;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 4px;
+      background: #7d4ac7;
+      border-radius: 5px;
+      margin: 16px auto 0;
+    }
+
 
     /* =========================
        ABOUT
@@ -249,76 +257,84 @@
       background: #ffffff;
     }
 
-    .about-grid {
+    .about-content {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
       gap: 70px;
-      align-items: start;
+    }
+
+    .about-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image-box {
+      width: 350px;
+      min-height: 260px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-image-box img {
+      width: 100%;
+      max-height: 230px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .about-text h3 {
+      font-size: 1.9rem;
+      margin-bottom: 18px;
+      color: #252525;
     }
 
     .about-text p {
-      color: #666;
-      margin-bottom: 18px;
+      color: #555555;
+      margin-bottom: 17px;
       font-size: 1rem;
     }
 
-    .about-info {
-      background: #f7f3ee;
-      border: 1px solid #e7ded5;
-      border-radius: 16px;
-      padding: 30px;
+    .about-text .button {
+      margin-top: 5px;
     }
 
-    .info-row {
-      padding: 15px 0;
-      border-bottom: 1px solid #ded4ca;
-    }
-
-    .info-row:last-child {
-      border-bottom: none;
-    }
-
-    .info-row strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #333;
-    }
-
-    .info-row span {
-      color: #777;
-      font-size: 0.94rem;
-    }
 
     /* =========================
        ARTWORK
     ========================= */
 
     .artwork {
-      background: #f8f7f4;
+      background: #faf9fd;
     }
 
     .artwork-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 25px;
     }
 
     .art-card {
-      background: white;
-      border-radius: 16px;
+      background: #ffffff;
+      border-radius: 15px;
       overflow: hidden;
-      border: 1px solid #e8e5df;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
       transition: 0.3s ease;
     }
 
     .art-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.11);
     }
 
     .art-image {
-      height: 350px;
-      background: #eee;
+      height: 300px;
+      background: #f2f2f2;
       overflow: hidden;
     }
 
@@ -326,7 +342,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: 0.4s ease;
+      transition: 0.35s ease;
     }
 
     .art-card:hover .art-image img {
@@ -337,23 +353,26 @@
       padding: 22px;
     }
 
-    .art-number {
-      color: #9a8069;
+    .art-info h3 {
+      color: #292929;
+      margin-bottom: 6px;
+      font-size: 1.15rem;
+    }
+
+    .art-info p {
+      color: #777777;
+      font-size: 0.9rem;
+    }
+
+    .art-tag {
+      color: #7d4ac7;
       font-size: 0.75rem;
-      font-weight: 800;
+      font-weight: 700;
+      text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 6px;
     }
 
-    .art-info h3 {
-      font-size: 1.15rem;
-      margin-bottom: 7px;
-    }
-
-    .art-info p {
-      color: #777;
-      font-size: 0.9rem;
-    }
 
     /* =========================
        SKILLS
@@ -370,117 +389,107 @@
     }
 
     .skill-card {
-      padding: 28px;
-      border: 1px solid #e7e3dd;
+      padding: 27px;
       border-radius: 14px;
-      background: #fff;
-      transition: 0.25s ease;
+      border: 1px solid #e9e4f0;
+      background: #ffffff;
+      transition: 0.3s ease;
     }
 
     .skill-card:hover {
-      border-color: #cbb9a8;
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+      border-color: #c8acec;
+      box-shadow: 0 10px 25px rgba(125, 74, 199, 0.08);
     }
 
-    .skill-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: #f0e8df;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8c6b4f;
+    .skill-number {
+      color: #7d4ac7;
+      font-size: 0.8rem;
       font-weight: 800;
-      margin-bottom: 18px;
+      margin-bottom: 8px;
     }
 
     .skill-card h3 {
-      margin-bottom: 9px;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      color: #282828;
+      margin-bottom: 10px;
     }
 
     .skill-card p {
-      color: #777;
-      font-size: 0.9rem;
+      color: #6d6d6d;
+      font-size: 0.92rem;
     }
+
 
     /* =========================
        RESUME
     ========================= */
 
     .resume {
-      background: #282828;
-      color: white;
-    }
-
-    .resume .section-label {
-      color: #c7a98e;
-    }
-
-    .resume .section-title {
-      color: white;
-    }
-
-    .resume .section-description {
-      color: #c7c7c7;
-      margin-bottom: 30px;
+      background: linear-gradient(
+        135deg,
+        #f4efff,
+        #ffffff
+      );
     }
 
     .resume-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 30px;
-      border: 1px solid #484848;
-      border-radius: 15px;
-      background: #303030;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 45px;
+      background: #ffffff;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .resume-box h3 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
     }
 
     .resume-box p {
-      color: #c8c8c8;
+      color: #6c6c6c;
+      margin-bottom: 25px;
     }
 
-    .resume .button {
-      background: white;
-      color: #252525;
-      border-color: white;
-      white-space: nowrap;
-    }
 
     /* =========================
        CONTACT
     ========================= */
 
     .contact {
-      background: #f8f7f4;
+      background: #ffffff;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 22px;
+      max-width: 850px;
+      margin: 0 auto;
     }
 
     .contact-card {
-      background: white;
-      border: 1px solid #e6e2dc;
-      border-radius: 14px;
       padding: 28px;
+      background: #faf9fd;
+      border: 1px solid #e9e4f0;
+      border-radius: 14px;
+      text-align: center;
     }
 
     .contact-card h3 {
       margin-bottom: 8px;
+      color: #292929;
     }
 
     .contact-card p {
-      color: #777;
+      color: #777777;
       word-break: break-word;
     }
 
     .contact-card a {
-      color: #8c6b4f;
+      color: #7d4ac7;
       font-weight: 600;
     }
 
@@ -488,34 +497,38 @@
       text-decoration: underline;
     }
 
+
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      background: #1f1f1f;
-      color: white;
-      padding: 35px 0;
+      padding: 30px 0;
+      background: #292929;
+      color: #ffffff;
       text-align: center;
     }
 
     footer p {
-      color: #aaa;
+      color: #bbbbbb;
       font-size: 0.85rem;
     }
+
 
     /* =========================
        RESPONSIVE
     ========================= */
 
     @media (max-width: 850px) {
-      .nav-links {
-        gap: 15px;
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+      .about-image-box {
+        width: 100%;
+        max-width: 400px;
       }
 
       .artwork-grid {
@@ -530,27 +543,26 @@
         grid-template-columns: 1fr;
       }
 
-      .resume-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
     }
 
+
     @media (max-width: 650px) {
+
       nav {
         height: auto;
         padding: 18px 0;
         flex-direction: column;
-        gap: 14px;
+        gap: 15px;
       }
 
       .nav-links {
+        gap: 14px;
         flex-wrap: wrap;
         justify-content: center;
       }
 
-      .hero-content {
-        padding: 80px 0;
+      .hero {
+        min-height: 600px;
       }
 
       .hero h1 {
@@ -559,20 +571,25 @@
       }
 
       section {
-        padding: 80px 0;
+        padding: 75px 0;
       }
 
-      .art-image {
-        height: auto;
+      .section-title h2 {
+        font-size: 2rem;
       }
 
-      .art-image img {
-        height: auto;
-        object-fit: contain;
+      .about-image-box {
+        min-height: 220px;
       }
+
+      .resume-box {
+        padding: 30px 20px;
+      }
+
     }
   </style>
 </head>
+
 
 <body>
 
@@ -582,22 +599,43 @@
 
   <header>
     <div class="container">
+
       <nav>
 
         <a href="#home" class="logo">
-          Eloisa<span>.</span>
+          Eloisa Rebato
         </a>
 
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#artwork">Artwork</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#artwork">Artwork</a>
+          </li>
+
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+
+          <li>
+            <a href="#resume">Resume</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
         </ul>
 
       </nav>
+
     </div>
   </header>
 
@@ -606,506 +644,547 @@
        HERO
   ========================= -->
 
-  <main>
+  <section id="home" class="hero">
 
-    <section id="home" class="hero">
+    <div class="container">
 
-      <div class="container">
+      <div class="hero-content">
 
-        <div class="hero-content">
-
-          <span class="eyebrow">
-            DIGITAL ARTIST • ASPIRING ANIMATOR
-          </span>
-
-          <h1>
-            Hi, I'm <span>Eloisa.</span>
-          </h1>
-
-          <p class="hero-subtitle">
-            Digital Artist &amp; Aspiring Animator
-          </p>
-
-          <p class="hero-description">
-            Welcome to my creative portfolio. I enjoy exploring digital art,
-            animation, UI/UX design, and technology while continuously
-            developing my creative and technical skills.
-          </p>
-
-          <div class="buttons">
-
-            <a href="#artwork" class="button primary">
-              Explore My Work
-            </a>
-
-            <a href="#resume" class="button secondary">
-              View Resume
-            </a>
-
-          </div>
-
+        <div class="hero-small">
+          WELCOME TO MY PORTFOLIO
         </div>
 
-      </div>
+        <h1>
+          Eloisa <span>Rebato</span>
+        </h1>
 
-    </section>
+        <h2>
+          Digital Artist &amp; Aspiring Animator
+        </h2>
 
+        <p>
+          I am a creative student interested in digital art, animation,
+          UI/UX design, and technology. This portfolio showcases some of
+          my artwork, skills, and creative projects.
+        </p>
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
+        <div class="hero-buttons">
 
-    <section id="about" class="about">
+          <a href="#artwork" class="button button-primary">
+            View My Artwork
+          </a>
 
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-label">
+          <a href="#about" class="button button-outline">
             About Me
-          </div>
-
-          <h2 class="section-title">
-            Creativity meets technology.
-          </h2>
-
-          <p class="section-description">
-            A little bit about who I am and the things I'm passionate about.
-          </p>
-
-        </div>
-
-        <div class="about-grid">
-
-          <div class="about-text">
-
-            <p>
-              I am Eloisa Rebato, a Digital Artist and Aspiring Animator
-              interested in combining creativity and technology.
-            </p>
-
-            <p>
-              I enjoy creating digital artwork and exploring visual
-              storytelling while learning more about animation, UI/UX
-              design, and web development.
-            </p>
-
-            <p>
-              I am continuously building my skills through school projects,
-              personal creative work, and experimentation with different
-              digital tools and technologies.
-            </p>
-
-            <p>
-              My goal is to create meaningful and visually engaging digital
-              experiences while continuing to grow as both a creative and
-              technical professional.
-            </p>
-
-          </div>
-
-          <div class="about-info">
-
-            <div class="info-row">
-              <strong>Role</strong>
-              <span>Digital Artist &amp; Aspiring Animator</span>
-            </div>
-
-            <div class="info-row">
-              <strong>Creative Interests</strong>
-              <span>Digital Art, Animation, UI/UX Design</span>
-            </div>
-
-            <div class="info-row">
-              <strong>Design Tools</strong>
-              <span>Figma, Canva, GIMP, Krita, Adobe Photoshop</span>
-            </div>
-
-            <div class="info-row">
-              <strong>Development</strong>
-              <span>HTML, CSS, JavaScript, Java, C#</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         ARTWORK
-    ========================= -->
-
-    <section id="artwork" class="artwork">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-label">
-            Selected Work
-          </div>
-
-          <h2 class="section-title">
-            My Artwork
-          </h2>
-
-          <p class="section-description">
-            A collection of digital artwork and sketches from my creative
-            journey.
-          </p>
-
-        </div>
-
-        <div class="artwork-grid">
-
-          <article class="art-card">
-
-            <div class="art-image">
-              <img
-                src="src/assets/FAA.png"
-                alt="Digital artwork by Eloisa Rebato"
-              />
-            </div>
-
-            <div class="art-info">
-
-              <div class="art-number">
-                01 / DIGITAL ART
-              </div>
-
-              <h3>Digital Artwork</h3>
-
-              <p>
-                A digital artwork created as part of my creative portfolio.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="art-card">
-
-            <div class="art-image">
-              <img
-                src="src/assets/pie.png"
-                alt="Digital artwork by Eloisa Rebato"
-              />
-            </div>
-
-            <div class="art-info">
-
-              <div class="art-number">
-                02 / DIGITAL ART
-              </div>
-
-              <h3>Creative Illustration</h3>
-
-              <p>
-                A digital illustration exploring composition and visual
-                expression.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="art-card">
-
-            <div class="art-image">
-              <img
-                src="src/assets/sketch3.jpg"
-                alt="Sketch artwork by Eloisa Rebato"
-              />
-            </div>
-
-            <div class="art-info">
-
-              <div class="art-number">
-                03 / SKETCH
-              </div>
-
-              <h3>Sketch Study</h3>
-
-              <p>
-                A sketch exploring ideas, form, composition, and artistic
-                expression.
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         SKILLS
-    ========================= -->
-
-    <section id="skills" class="skills">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-label">
-            What I Do
-          </div>
-
-          <h2 class="section-title">
-            Skills &amp; Tools
-          </h2>
-
-          <p class="section-description">
-            A combination of creative, technical, and professional skills
-            that I continue to develop.
-          </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              UI
-            </div>
-
-            <h3>UI/UX Design</h3>
-
-            <p>
-              UI design, UX design fundamentals, wireframing, prototyping,
-              responsive design, user-centered design, and design systems.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              VD
-            </div>
-
-            <h3>Visual Design</h3>
-
-            <p>
-              Visual hierarchy, layout and composition, typography,
-              color theory, design consistency, visual quality assurance,
-              and digital asset creation.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              DT
-            </div>
-
-            <h3>Design Tools</h3>
-
-            <p>
-              Figma, Canva, GIMP, Krita, and Adobe Photoshop.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              WD
-            </div>
-
-            <h3>Web Development</h3>
-
-            <p>
-              HTML, CSS, JavaScript, responsive web design,
-              frontend development, and REST API integration.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              DB
-            </div>
-
-            <h3>Database Management</h3>
-
-            <p>
-              PostgreSQL, MySQL, SQL, database design, normalization,
-              and CRUD operations.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              DEV
-            </div>
-
-            <h3>Programming &amp; Development</h3>
-
-            <p>
-              Java, C#, Spring Boot, ASP.NET Core,
-              object-oriented programming, and Git/GitHub.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              PRO
-            </div>
-
-            <h3>Technical &amp; Professional</h3>
-
-            <p>
-              Requirements analysis, problem solving, technical
-              documentation, attention to detail, and cross-functional
-              collaboration.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         RESUME
-    ========================= -->
-
-    <section id="resume" class="resume">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-label">
-            My Resume
-          </div>
-
-          <h2 class="section-title">
-            Want to know more?
-          </h2>
-
-          <p class="section-description">
-            View my resume for additional information about my education,
-            projects, skills, and experience.
-          </p>
-
-        </div>
-
-
-        <div class="resume-box">
-
-          <p>
-            My resume is available as a PDF document.
-          </p>
-
-          <a
-            href="src/assets/Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button"
-          >
-            View Resume →
           </a>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
-    <section id="contact" class="contact">
+  <section id="about" class="about">
 
-      <div class="container">
+    <div class="container">
 
-        <div class="section-heading">
+      <div class="section-title">
 
-          <div class="section-label">
-            Get In Touch
+        <h2>
+          About Me
+        </h2>
+
+        <p>
+          A little about me, my creative interests, and my goals.
+        </p>
+
+      </div>
+
+
+      <div class="about-content">
+
+        <div class="about-image">
+
+          <div class="about-image-box">
+
+            <img
+              src="src/assets/FAA.png"
+              alt="Eloisa Rebato digital artwork"
+            />
+
           </div>
-
-          <h2 class="section-title">
-            Let's connect.
-          </h2>
-
-          <p class="section-description">
-            Feel free to reach out or explore my work on GitHub.
-          </p>
 
         </div>
 
 
-        <div class="contact-grid">
+        <div class="about-text">
 
-          <div class="contact-card">
+          <h3>
+            Hi! I'm Eloisa Rebato.
+          </h3>
 
-            <h3>Email</h3>
+          <p>
+            I'm a student interested in digital art, illustration,
+            and animation. I enjoy creating digital artwork,
+            experimenting with different styles, and developing
+            characters and visual ideas.
+          </p>
 
-            <p>
-              <a href="mailto:rebatoeloisa@gmail.com">
-                rebatoeloisa@gmail.com
-              </a>
-            </p>
+          <p>
+            I have experience creating commissioned artworks for
+            people and I am continuously improving my skills in
+            digital illustration and visual storytelling.
+          </p>
 
-          </div>
+          <p>
+            My goal is to pursue a career related to animation
+            and digital art while continuing to explore creative
+            and technological fields.
+          </p>
 
+          <p>
+            I mainly use Krita, Adobe Photoshop, and other digital
+            art tools for my artwork and creative projects.
+          </p>
 
-          <div class="contact-card">
-
-            <h3>GitHub</h3>
-
-            <p>
-              <a
-                href="https://github.com/zeeennnii"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github.com/zeeennnii
-              </a>
-            </p>
-
-          </div>
+          <a
+            href="src/assets/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-primary"
+          >
+            View Resume
+          </a>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
 
-  </main>
+  </section>
+
+
+  <!-- =========================
+       ARTWORK
+  ========================= -->
+
+  <section id="artwork" class="artwork">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          My Artwork
+        </h2>
+
+        <p>
+          A selection of digital artwork and sketches from my creative work.
+        </p>
+
+      </div>
+
+
+      <div class="artwork-grid">
+
+
+        <!-- ARTWORK 1 -->
+
+        <div class="art-card">
+
+          <div class="art-image">
+
+            <img
+              src="src/assets/FAA.png"
+              alt="Digital artwork"
+            />
+
+          </div>
+
+          <div class="art-info">
+
+            <div class="art-tag">
+              Digital Art
+            </div>
+
+            <h3>
+              Character Artwork
+            </h3>
+
+            <p>
+              A digital artwork focusing on character design,
+              color, and visual expression.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARTWORK 2 -->
+
+        <div class="art-card">
+
+          <div class="art-image">
+
+            <img
+              src="src/assets/pie.png"
+              alt="Digital illustration"
+            />
+
+          </div>
+
+          <div class="art-info">
+
+            <div class="art-tag">
+              Illustration
+            </div>
+
+            <h3>
+              Digital Illustration
+            </h3>
+
+            <p>
+              An illustration exploring composition,
+              color, and creative visual ideas.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARTWORK 3 -->
+
+        <div class="art-card">
+
+          <div class="art-image">
+
+            <img
+              src="src/assets/sketch3.jpg"
+              alt="Sketch artwork"
+            />
+
+          </div>
+
+          <div class="art-info">
+
+            <div class="art-tag">
+              Sketch
+            </div>
+
+            <h3>
+              Sketch Study
+            </h3>
+
+            <p>
+              A sketch exploring form, character ideas,
+              and visual development.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================= -->
+
+  <section id="skills" class="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Skills &amp; Tools
+        </h2>
+
+        <p>
+          My creative, technical, and professional skills.
+        </p>
+
+      </div>
+
+
+      <div class="skills-grid">
+
+
+        <!-- UI/UX -->
+
+        <div class="skill-card">
+
+          <div class="skill-number">
+            01
+          </div>
+
+          <h3>
+            UI/UX Design
+          </h3>
+
+          <p>
+            UI design, UX design fundamentals, wireframing,
+            prototyping, responsive design, user-centered design,
+            and design systems.
+          </p>
+
+        </div>
+
+
+        <!-- VISUAL DESIGN -->
+
+        <div class="skill-card">
+
+          <div class="skill-number">
+            02
+          </div>
+
+          <h3>
+            Visual Design
+          </h3>
+
+          <p>
+            Visual hierarchy, layout and composition, typography,
+            color theory, design consistency, visual quality
+            assurance, and digital asset creation.
+          </p>
+
+        </div>
+
+
+        <!-- DESIGN TOOLS -->
+
+        <div class="skill-card">
+
+          <div class="skill-number">
+            03
+          </div>
+
+          <h3>
+            Design Tools
+          </h3>
+
+          <p>
+            Figma, Canva, GIMP, Krita, Adobe Photoshop,
+            and other digital creative tools.
+          </p>
+
+        </div>
+
+
+        <!-- WEB DEVELOPMENT -->
+
+        <div class="skill-card">
+
+          <div class="skill-number">
+            04
+          </div>
+
+          <h3>
+            Web Development
+          </h3>
+
+          <p>
+            HTML, CSS, JavaScript, responsive web design,
+            frontend development, and REST API integration.
+          </p>
+
+        </div>
+
+
+        <!-- DATABASE -->
+
+        <div class="skill-card">
+
+          <div class="skill-number">
+            05
+          </div>
+
+          <h3>
+            Database Management
+          </h3>
+
+          <p>
+            PostgreSQL, MySQL, SQL, database design,
+            normalization, and CRUD operations.
+          </p>
+
+        </div>
+
+
+        <!-- PROGRAMMING -->
+
+        <div class="skill-card">
+
+          <div class="skill-number">
+            06
+          </div>
+
+          <h3>
+            Programming &amp; Development
+          </h3>
+
+          <p>
+            Java, C#, Spring Boot, ASP.NET Core,
+            object-oriented programming, and Git/GitHub.
+          </p>
+
+        </div>
+
+
+        <!-- PROFESSIONAL -->
+
+        <div class="skill-card">
+
+          <div class="skill-number">
+            07
+          </div>
+
+          <h3>
+            Technical &amp; Professional
+          </h3>
+
+          <p>
+            Requirements analysis, problem solving, technical
+            documentation, attention to detail, and
+            cross-functional collaboration.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESUME
+  ========================= -->
+
+  <section id="resume" class="resume">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Resume
+        </h2>
+
+        <p>
+          Learn more about my education, skills, projects,
+          and experience.
+        </p>
+
+      </div>
+
+
+      <div class="resume-box">
+
+        <h3>
+          My Resume
+        </h3>
+
+        <p>
+          View my complete resume in PDF format.
+        </p>
+
+        <a
+          href="src/assets/Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button button-primary"
+        >
+          View Resume
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Contact
+        </h2>
+
+        <p>
+          Feel free to connect with me.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <h3>
+            Email
+          </h3>
+
+          <p>
+            <a href="mailto:rebatoeloisa@gmail.com">
+              rebatoeloisa@gmail.com
+            </a>
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>
+            GitHub
+          </h3>
+
+          <p>
+            <a
+              href="https://github.com/zeeennnii"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github.com/zeeennnii
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- =========================
