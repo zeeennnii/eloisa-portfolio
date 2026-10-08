@@ -1,656 +1,348 @@
-<!--
-  Portfolio of Eloisa Rebato
-  Based on the Simplefolio template by Jacobo Martínez
--->
-
 <!DOCTYPE html>
-<html lang="en" class="sr">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <title>Eloisa Rebato | Digital Artist & Aspiring Animator</title>
 
-  <title>Eloisa Rebato | Digital Artist</title>
+    <meta
+      name="keywords"
+      content="Eloisa Rebato, digital artist, animator, digital illustration, character design"
+    />
 
-  <meta
-    name="keywords"
-    content="Eloisa Rebato, digital artist, animator, digital illustration, character design, BSIT"
-  />
+    <meta
+      name="description"
+      content="Eloisa Rebato - Digital Artist and Aspiring Animator"
+    />
 
-  <meta
-    name="description"
-    content="Eloisa Rebato | Digital Artist and Aspiring Animator"
-  />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
+    <link rel="stylesheet" href="styles.scss" />
 
-  <link rel="stylesheet" href="styles.scss" />
+    <script
+      defer
+      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
+    ></script>
+  </head>
 
-  <script
-    defer
-    src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
-  ></script>
+  <body>
+    <div id="top"></div>
 
-  <script
-    async
-    defer
-    src="https://buttons.github.io/buttons.js"
-  ></script>
-</head>
+    <!-- HERO SECTION -->
+    <section id="hero" class="jumbotron">
+      <div class="container">
+        <h1 class="hero-title load-hidden">
+          Hi, I'm
+          <span class="text-color-main">Eloisa Rebato</span>
+          <br />
+          Digital Artist & Aspiring Animator
+        </h1>
 
+        <p class="hero-cta load-hidden">
+          <a
+            rel="noreferrer"
+            class="cta-btn cta-btn--hero"
+            href="#about"
+          >
+            Know more
+          </a>
+        </p>
+      </div>
+    </section>
 
-<body>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title load-hidden">About Me</h2>
 
-  <div id="top"></div>
+        <div class="row about-wrapper">
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__image load-hidden">
+              <img
+                alt="Eloisa Rebato"
+                class="img-fluid rounded shadow-lg"
+                width="300px"
+                src="assets/FAA.png"
+              />
+            </div>
+          </div>
 
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__info load-hidden">
 
-  <!-- ******************** Hero Section ******************** -->
+              <p class="about-wrapper__info-text">
+                Hi! I'm Eloisa Rebato, a student interested in digital art,
+                illustration, and animation. I enjoy creating digital artwork,
+                experimenting with different styles, and developing characters
+                and visual ideas.
+              </p>
 
-  <section id="hero" class="jumbotron">
+              <p class="about-wrapper__info-text">
+                I have experience creating commissioned artworks for people
+                and I am continuously improving my skills in digital
+                illustration and visual storytelling. My goal is to pursue a
+                career related to animation and digital art.
+              </p>
 
-    <div class="container">
+              <p class="about-wrapper__info-text">
+                I mainly use Krita, Adobe Photoshop, and ibisPaint for my
+                digital artwork.
+              </p>
 
-      <h1 class="hero-title load-hidden">
+              <span class="d-flex mt-3">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--resume"
+                  href="assets/resume.pdf"
+                >
+                  View Resume
+                </a>
+              </span>
 
-        Hi, my name is
-        <span class="text-color-main">Eloisa Rebato</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <br />
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
 
-        I'm an aspiring Digital Artist & Animator.
+          <h2 class="section-title dark-blue-text">
+            My Artwork
+          </h2>
 
-      </h1>
+          <!-- PROJECT 1 -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
 
+                <h3 class="project-wrapper__text-title">
+                  Digital Illustration
+                </h3>
 
-      <p class="hero-cta load-hidden">
+                <div>
+                  <p class="mb-4">
+                    A digital illustration created as part of my personal
+                    artwork collection. This piece allowed me to practice
+                    digital drawing, composition, and color.
+                  </p>
+                </div>
 
-        <a
-          rel="noreferrer"
-          class="cta-btn cta-btn--hero"
-          href="#about"
-        >
-          Know more
-        </a>
+              </div>
+            </div>
 
-      </p>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
 
-    </div>
+                <div
+                  data-tilt
+                  data-tilt-max="4"
+                  data-tilt-glare="true"
+                  data-tilt-max-glare="0.5"
+                  class="thumbnail rounded js-tilt"
+                >
+                  <img
+                    alt="Digital Illustration"
+                    class="img-fluid"
+                    src="assets/FAA.png"
+                  />
+                </div>
 
-  </section>
+              </div>
+            </div>
+          </div>
 
-  <!-- /END Hero Section -->
+          <!-- PROJECT 2 -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
 
+                <h3 class="project-wrapper__text-title">
+                  Digital Artwork
+                </h3>
 
+                <div>
+                  <p class="mb-4">
+                    A personal digital artwork focused on developing visual
+                    ideas through illustration, composition, and color.
+                  </p>
+                </div>
 
-  <!-- ******************** About Section ******************** -->
+              </div>
+            </div>
 
-  <section id="about">
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
 
-    <div class="container">
+                <div
+                  data-tilt
+                  data-tilt-max="4"
+                  data-tilt-glare="true"
+                  data-tilt-max-glare="0.5"
+                  class="thumbnail rounded js-tilt"
+                >
+                  <img
+                    alt="Digital Artwork"
+                    class="img-fluid"
+                    src="assets/pie.png"
+                  />
+                </div>
 
-      <h2 class="section-title load-hidden">
-        About Me
-      </h2>
+              </div>
+            </div>
+          </div>
 
+          <!-- PROJECT 3 -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
 
-      <div class="row about-wrapper">
+                <h3 class="project-wrapper__text-title">
+                  Character Sketch
+                </h3>
 
+                <div>
+                  <p class="mb-4">
+                    A character sketch created to practice drawing,
+                    character development, expressive design, and visual
+                    storytelling.
+                  </p>
+                </div>
 
-        <div class="col-md-6 col-sm-12">
+              </div>
+            </div>
 
-          <div class="about-wrapper__image load-hidden">
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
 
-            <img
-              alt="Eloisa Rebato"
-              class="img-fluid rounded shadow-lg"
-              height="auto"
-              width="300px"
-              src="assets/profile.jpg"
-            />
+                <div
+                  data-tilt
+                  data-tilt-max="4"
+                  data-tilt-glare="true"
+                  data-tilt-max-glare="0.5"
+                  class="thumbnail rounded js-tilt"
+                >
+                  <img
+                    alt="Character Sketch"
+                    class="img-fluid"
+                    src="assets/sketch3.jpg"
+                  />
+                </div>
 
+              </div>
+            </div>
           </div>
 
         </div>
+      </div>
+    </section>
 
+    <!-- SKILLS SECTION -->
+    <section id="about">
+      <div class="container">
 
+        <h2 class="section-title load-hidden">
+          Skills
+        </h2>
 
-        <div class="col-md-6 col-sm-12">
-
+        <div class="about-wrapper">
           <div class="about-wrapper__info load-hidden">
 
             <p class="about-wrapper__info-text">
-
-              I am a Bachelor of Science in Information Technology
-              student and an aspiring digital artist and animator.
-              I enjoy creating digital illustrations, character
-              designs, and other creative projects.
-
+              <strong>Digital Art:</strong>
+              Digital Illustration, Character Design, Sketching,
+              Visual Storytelling, Composition, Color Theory
             </p>
-
 
             <p class="about-wrapper__info-text">
-
-              I have experience creating digital artwork through
-              personal projects and art commissions. I am interested
-              in animation, visual storytelling, and continuously
-              improving my skills as a digital artist.
-
+              <strong>Tools:</strong>
+              Krita, Adobe Photoshop, ibisPaint
             </p>
 
-
-            <span class="d-flex mt-3">
-
-              <a
-                rel="noreferrer"
-                target="_blank"
-                class="cta-btn cta-btn--resume"
-                href="assets/resume.pdf"
-              >
-                View Resume
-              </a>
-
-            </span>
+            <p class="about-wrapper__info-text">
+              <strong>Other Skills:</strong>
+              Creativity, Attention to Detail, Problem Solving,
+              Visual Communication
+            </p>
 
           </div>
-
         </div>
 
       </div>
+    </section>
 
-    </div>
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="container">
 
-  </section>
-
-  <!-- /END About Section -->
-
-
-
-  <!-- ******************** Art Portfolio Section ******************** -->
-
-  <section id="projects">
-
-    <div class="container">
-
-      <div class="project-wrapper">
-
-        <h2 class="section-title dark-blue-text">
-          Art & Projects
+        <h2 class="section-title">
+          Contact
         </h2>
 
+        <div class="contact-wrapper load-hidden">
 
+          <p class="contact-wrapper__text">
+            Interested in my artwork or want to get in touch?
+          </p>
 
-        <!-- ******************** Artwork 1 ******************** -->
-
-        <div class="row">
-
-          <div class="col-lg-4 col-sm-12">
-
-            <div class="project-wrapper__text load-hidden">
-
-              <h3 class="project-wrapper__text-title">
-                Digital Illustration
-              </h3>
-
-
-              <div>
-
-                <p class="mb-4">
-
-                  A selection of my digital artwork and illustrations
-                  created using Krita, Adobe Photoshop, and ibisPaint.
-                  My work explores character design, composition,
-                  color, and visual storytelling.
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <div class="col-lg-8 col-sm-12">
-
-            <div class="project-wrapper__image load-hidden">
-
-              <div
-                data-tilt
-                data-tilt-max="4"
-                data-tilt-glare="true"
-                data-tilt-max-glare="0.5"
-                class="thumbnail rounded js-tilt"
-              >
-
-                <img
-                  alt="Digital artwork by Eloisa Rebato"
-                  class="img-fluid"
-                  src="assets/artwork1.jpg"
-                />
-
-              </div>
-
-            </div>
-
-          </div>
+          <a
+            rel="noreferrer"
+            class="cta-btn cta-btn--resume"
+            href="mailto:rebatoeloisa@gmail.com"
+          >
+            Email Me
+          </a>
 
         </div>
-
-        <!-- /END Artwork 1 -->
-
-
-
-        <!-- ******************** Artwork 2 ******************** -->
-
-        <div class="row">
-
-          <div class="col-lg-4 col-sm-12">
-
-            <div class="project-wrapper__text load-hidden">
-
-              <h3 class="project-wrapper__text-title">
-                Character Design
-              </h3>
-
-
-              <div>
-
-                <p class="mb-4">
-
-                  Character-focused artwork created as part of my
-                  personal art practice and commissioned work.
-                  These projects allow me to practice sketching,
-                  character design, coloring, and rendering.
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <div class="col-lg-8 col-sm-12">
-
-            <div class="project-wrapper__image load-hidden">
-
-              <div
-                data-tilt
-                data-tilt-max="4"
-                data-tilt-glare="true"
-                data-tilt-max-glare="0.5"
-                class="thumbnail rounded js-tilt"
-              >
-
-                <img
-                  alt="Character artwork by Eloisa Rebato"
-                  class="img-fluid"
-                  src="assets/artwork2.jpg"
-                />
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- /END Artwork 2 -->
-
-
-
-        <!-- ******************** Project 1 ******************** -->
-
-        <div class="row">
-
-          <div class="col-lg-4 col-sm-12">
-
-            <div class="project-wrapper__text load-hidden">
-
-              <h3 class="project-wrapper__text-title">
-                Pokédex Web Application
-              </h3>
-
-
-              <div>
-
-                <p class="mb-4">
-
-                  A web-based Pokédex project created as part of
-                  my Information Technology studies. This project
-                  allowed me to practice web development and
-                  working with digital interfaces.
-
-                </p>
-
-              </div>
-
-
-              <a
-                rel="noreferrer"
-                target="_blank"
-                class="cta-btn text-color-main"
-                href="https://github.com/zeeennnii"
-              >
-                GitHub
-              </a>
-
-            </div>
-
-          </div>
-
-
-
-          <div class="col-lg-8 col-sm-12">
-
-            <div class="project-wrapper__image load-hidden">
-
-              <div
-                data-tilt
-                data-tilt-max="4"
-                data-tilt-glare="true"
-                data-tilt-max-glare="0.5"
-                class="thumbnail rounded js-tilt"
-              >
-
-                <img
-                  alt="Pokédex Web Application"
-                  class="img-fluid"
-                  src="assets/project.jpg"
-                />
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- /END Project 1 -->
-
-
-
-        <!-- ******************** Project 2 ******************** -->
-
-        <div class="row">
-
-          <div class="col-lg-4 col-sm-12">
-
-            <div class="project-wrapper__text load-hidden">
-
-              <h3 class="project-wrapper__text-title">
-                Anti-Procrastination Pomodoro
-              </h3>
-
-
-              <div>
-
-                <p class="mb-4">
-
-                  A productivity project based on the Pomodoro
-                  technique. This project allowed me to practice
-                  programming, interface development, and problem
-                  solving.
-
-                </p>
-
-              </div>
-
-
-              <a
-                rel="noreferrer"
-                target="_blank"
-                class="cta-btn text-color-main"
-                href="https://github.com/zeeennnii"
-              >
-                GitHub
-              </a>
-
-            </div>
-
-          </div>
-
-
-
-          <div class="col-lg-8 col-sm-12">
-
-            <div class="project-wrapper__image load-hidden">
-
-              <div
-                data-tilt
-                data-tilt-max="4"
-                data-tilt-glare="true"
-                data-tilt-max-glare="0.5"
-                class="thumbnail rounded js-tilt"
-              >
-
-                <img
-                  alt="Anti-Procrastination Pomodoro project"
-                  class="img-fluid"
-                  src="assets/project.jpg"
-                />
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- /END Project 2 -->
-
       </div>
+    </section>
 
-    </div>
-
-  </section>
-
-  <!-- /END Projects Section -->
-
-
-
-  <!-- ******************** Skills Section ******************** -->
-
-  <section id="skills">
-
-    <div class="container">
-
-      <h2 class="section-title dark-blue-text">
-        Skills
-      </h2>
-
-
-      <div class="about-wrapper__info">
-
-        <p class="about-wrapper__info-text">
-
-          <strong>Digital Art:</strong>
-          Digital Illustration, Character Design, Sketching,
-          Visual Storytelling, Composition, Color Theory
-
-        </p>
-
-
-        <p class="about-wrapper__info-text">
-
-          <strong>Art Tools:</strong>
-          Krita, Adobe Photoshop, ibisPaint
-
-        </p>
-
-
-        <p class="about-wrapper__info-text">
-
-          <strong>Web Development:</strong>
-          HTML, CSS, JavaScript, Responsive Web Design,
-          Frontend Development
-
-        </p>
-
-
-        <p class="about-wrapper__info-text">
-
-          <strong>Programming & Development:</strong>
-          Java, C#, Spring Boot, Object-Oriented Programming,
-          Git/GitHub
-
-        </p>
-
-
-        <p class="about-wrapper__info-text">
-
-          <strong>Database:</strong>
-          SQL, Database Design, CRUD Operations
-
-        </p>
-
-
-        <p class="about-wrapper__info-text">
-
-          <strong>Professional:</strong>
-          Creativity, Problem Solving, Attention to Detail,
-          Communication, Time Management
-
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- /END Skills Section -->
-
-
-
-  <!-- ******************** Contact Section ******************** -->
-
-  <section id="contact">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        Contact
-      </h2>
-
-
-      <div class="contact-wrapper load-hidden">
-
-        <p class="contact-wrapper__text">
-
-          Interested in my work or want to get in touch?
-          Feel free to contact me.
-
-        </p>
-
+    <!-- FOOTER -->
+    <footer class="footer navbar-static-bottom">
+      <div class="container">
 
         <a
           rel="noreferrer"
-          class="cta-btn cta-btn--resume"
-          href="mailto:rebatoeloisa@gmail.com"
+          href="#top"
+          class="back-to-top"
         >
-          Contact Me
+          <i
+            class="fa fa-angle-up fa-2x"
+            aria-hidden="true"
+          ></i>
         </a>
+
+        <div class="social-links">
+
+          <a
+            rel="noreferrer"
+            href="https://github.com/zeeennnii"
+            target="_blank"
+          >
+            <i class="fa fa-github fa-inverse"></i>
+          </a>
+
+        </div>
+
+        <hr />
+
+        <p class="footer__text">
+          © 2026 Eloisa Rebato
+        </p>
 
       </div>
+    </footer>
 
-    </div>
-
-  </section>
-
-  <!-- /END Contact Section -->
-
-
-
-  <!-- ******************** Footer Section ******************** -->
-
-  <footer class="footer navbar-static-bottom">
-
-    <div class="container">
-
-
-      <a
-        rel="noreferrer"
-        href="#top"
-        class="back-to-top"
-      >
-
-        <i
-          class="fa fa-angle-up fa-2x"
-          aria-hidden="true"
-        ></i>
-
-      </a>
-
-
-
-      <div class="social-links">
-
-
-        <!-- GitHub -->
-
-        <a
-          rel="noreferrer"
-          href="https://github.com/zeeennnii"
-          target="_blank"
-        >
-
-          <i class="fa fa-github fa-inverse"></i>
-
-        </a>
-
-
-        <!-- Email -->
-
-        <a
-          rel="noreferrer"
-          href="mailto:rebatoeloisa@gmail.com"
-        >
-
-          <i class="fa fa-envelope fa-inverse"></i>
-
-        </a>
-
-
-      </div>
-
-
-
-      <hr />
-
-
-      <p class="footer__text">
-
-        © 2026 Eloisa Rebato
-
-      </p>
-
-    </div>
-
-  </footer>
-
-  <!-- /END Footer Section -->
-
-
-
-  <script
-    defer
-    type="module"
-    src="index.js"
-  ></script>
-
-</body>
-
+    <script defer type="module" src="index.js"></script>
+  </body>
 </html>
