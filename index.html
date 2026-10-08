@@ -307,6 +307,7 @@
       height: 300px;
       background: #f2f2f2;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .art-image img {
@@ -458,6 +459,67 @@
       font-size: 0.85rem;
     }
 
+    /* IMAGE VIEWER */
+
+    .image-viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: rgba(20, 20, 20, 0.72);
+      backdrop-filter: blur(10px);
+    }
+
+    .image-viewer.active {
+      display: flex;
+    }
+
+    .image-viewer-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-viewer-content img {
+      max-width: 90vw;
+      max-height: 85vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .close-viewer {
+      position: absolute;
+      top: -45px;
+      right: -5px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #333333;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .close-viewer:hover {
+      background: #7d4ac7;
+      color: #ffffff;
+    }
+
     @media (max-width: 850px) {
       .about-content {
         grid-template-columns: 1fr;
@@ -520,6 +582,20 @@
       .resume-box {
         padding: 30px 20px;
       }
+
+      .image-viewer {
+        padding: 15px;
+      }
+
+      .image-viewer-content img {
+        max-width: 95vw;
+        max-height: 80vh;
+      }
+
+      .close-viewer {
+        top: -48px;
+        right: 0;
+      }
     }
   </style>
 </head>
@@ -548,6 +624,7 @@
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
+
         <div class="hero-small">
           WELCOME TO MY PORTFOLIO
         </div>
@@ -575,6 +652,7 @@
             About Me
           </a>
         </div>
+
       </div>
     </div>
   </section>
@@ -662,7 +740,11 @@
       <div class="artwork-grid">
 
         <div class="art-card">
-          <div class="art-image">
+
+          <div
+            class="art-image"
+            onclick="openImageViewer('src/assets/FAA.png')"
+          >
             <img
               src="src/assets/FAA.png"
               alt="Digital artwork"
@@ -670,6 +752,7 @@
           </div>
 
           <div class="art-info">
+
             <div class="art-tag">
               Digital Art
             </div>
@@ -682,11 +765,16 @@
               A digital artwork focusing on character design,
               color, and visual expression.
             </p>
+
           </div>
         </div>
 
         <div class="art-card">
-          <div class="art-image">
+
+          <div
+            class="art-image"
+            onclick="openImageViewer('src/assets/pie.png')"
+          >
             <img
               src="src/assets/pie.png"
               alt="Digital illustration"
@@ -694,6 +782,7 @@
           </div>
 
           <div class="art-info">
+
             <div class="art-tag">
               Illustration
             </div>
@@ -706,11 +795,16 @@
               An illustration exploring composition,
               color, and creative visual ideas.
             </p>
+
           </div>
         </div>
 
         <div class="art-card">
-          <div class="art-image">
+
+          <div
+            class="art-image"
+            onclick="openImageViewer('src/assets/sketch3.jpg')"
+          >
             <img
               src="src/assets/sketch3.jpg"
               alt="Sketch artwork"
@@ -718,6 +812,7 @@
           </div>
 
           <div class="art-info">
+
             <div class="art-tag">
               Sketch
             </div>
@@ -730,6 +825,7 @@
               A sketch exploring form, character ideas,
               and visual development.
             </p>
+
           </div>
         </div>
 
@@ -847,11 +943,7 @@
           </h3>
 
           <p>
-            <a
-              href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rebatoeloisa@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="mailto:rebatoeloisa@gmail.com">
               rebatoeloisa@gmail.com
             </a>
           </p>
@@ -884,6 +976,68 @@
       </p>
     </div>
   </footer>
+
+  <!-- IMAGE VIEWER -->
+
+  <div
+    id="imageViewer"
+    class="image-viewer"
+    onclick="closeImageViewer(event)"
+  >
+    <div class="image-viewer-content">
+
+      <button
+        class="close-viewer"
+        onclick="closeImageViewer()"
+        aria-label="Close image"
+      >
+        &times;
+      </button>
+
+      <img
+        id="viewerImage"
+        src=""
+        alt="Artwork preview"
+      />
+
+    </div>
+  </div>
+
+  <script>
+    function openImageViewer(imageSource) {
+      const viewer = document.getElementById("imageViewer");
+      const viewerImage = document.getElementById("viewerImage");
+
+      viewerImage.src = imageSource;
+      viewer.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeImageViewer(event) {
+      if (
+        event &&
+        event.target &&
+        event.target.id !== "imageViewer"
+      ) {
+        return;
+      }
+
+      const viewer = document.getElementById("imageViewer");
+      const viewerImage = document.getElementById("viewerImage");
+
+      viewer.classList.remove("active");
+      viewerImage.src = "";
+
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeImageViewer();
+      }
+    });
+  </script>
 
 </body>
 </html>
