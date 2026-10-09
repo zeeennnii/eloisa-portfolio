@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Eloisa Rebato | Digital Artist & Aspiring Animator</title>
-
-  <meta
-    name="description"
-    content="Portfolio of Eloisa Rebato, Digital Artist and Aspiring Animator."
-  />
-
+  <meta name="description" content="Portfolio of Eloisa Rebato, Digital Artist and Aspiring Animator." />
   <link rel="icon" type="image/png" href="src/assets/favicon.png" />
 
   <style>
@@ -57,7 +53,7 @@
     }
 
     nav {
-      height: 70px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -91,12 +87,7 @@
       min-height: 680px;
       display: flex;
       align-items: center;
-      background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f9f7ff 55%,
-        #eee8ff 100%
-      );
+      background: linear-gradient(135deg, #ffffff 0%, #f9f7ff 55%, #eee8ff 100%);
       position: relative;
       overflow: hidden;
     }
@@ -276,10 +267,6 @@
       font-size: 1rem;
     }
 
-    .about-text .button {
-      margin-top: 5px;
-    }
-
     .artwork {
       background: #faf9fd;
     }
@@ -307,14 +294,14 @@
       height: 300px;
       background: #f2f2f2;
       overflow: hidden;
-      cursor: pointer;
+      cursor: zoom-in;
     }
 
     .art-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: 0.35s ease;
+      transition: transform 0.35s ease;
     }
 
     .art-card:hover .art-image img {
@@ -381,11 +368,7 @@
     }
 
     .resume {
-      background: linear-gradient(
-        135deg,
-        #f4efff,
-        #ffffff
-      );
+      background: linear-gradient(135deg, #f4efff, #ffffff);
     }
 
     .resume-box {
@@ -459,7 +442,7 @@
       font-size: 0.85rem;
     }
 
-    /* IMAGE VIEWER */
+    /* Clickable artwork viewer */
 
     .image-viewer {
       position: fixed;
@@ -471,6 +454,7 @@
       padding: 30px;
       background: rgba(20, 20, 20, 0.72);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .image-viewer.active {
@@ -531,10 +515,7 @@
         max-width: 400px;
       }
 
-      .artwork-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .artwork-grid,
       .skills-grid {
         grid-template-columns: 1fr;
       }
@@ -546,7 +527,6 @@
 
     @media (max-width: 650px) {
       nav {
-        height: auto;
         padding: 18px 0;
         flex-direction: column;
         gap: 15px;
@@ -605,9 +585,7 @@
   <header>
     <div class="container">
       <nav>
-        <a href="#home" class="logo">
-          Eloisa Rebato
-        </a>
+        <a href="#home" class="logo">Eloisa Rebato</a>
 
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -624,18 +602,11 @@
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
+        <div class="hero-small">WELCOME TO MY PORTFOLIO</div>
 
-        <div class="hero-small">
-          WELCOME TO MY PORTFOLIO
-        </div>
+        <h1>Eloisa <span>Rebato</span></h1>
 
-        <h1>
-          Eloisa <span>Rebato</span>
-        </h1>
-
-        <h2>
-          Digital Artist &amp; Aspiring Animator
-        </h2>
+        <h2>Digital Artist &amp; Aspiring Animator</h2>
 
         <p>
           I am a creative student interested in digital art, animation,
@@ -644,34 +615,21 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="#artwork" class="button button-primary">
-            View My Artwork
-          </a>
-
-          <a href="#about" class="button button-outline">
-            About Me
-          </a>
+          <a href="#artwork" class="button button-primary">View My Artwork</a>
+          <a href="#about" class="button button-outline">About Me</a>
         </div>
-
       </div>
     </div>
   </section>
 
   <section id="about" class="about">
     <div class="container">
-
       <div class="section-title">
-        <h2>
-          About Me
-        </h2>
-
-        <p>
-          A little about me, my creative interests, and my goals.
-        </p>
+        <h2>About Me</h2>
+        <p>A little about me, my creative interests, and my goals.</p>
       </div>
 
       <div class="about-content">
-
         <div class="about-image">
           <div class="about-image-box">
             <img
@@ -682,10 +640,7 @@
         </div>
 
         <div class="about-text">
-
-          <h3>
-            Hi! I'm Eloisa Rebato.
-          </h3>
+          <h3>Hi! I'm Eloisa Rebato.</h3>
 
           <p>
             I'm a student interested in digital art, illustration,
@@ -710,15 +665,7 @@
             for my digital artwork.
           </p>
 
-          <a
-            href="src/assets/Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button button-primary"
-          >
-            View Resume
-          </a>
-
+          <!-- Resume button intentionally removed from About Me -->
         </div>
       </div>
     </div>
@@ -726,188 +673,93 @@
 
   <section id="artwork" class="artwork">
     <div class="container">
-
       <div class="section-title">
-        <h2>
-          My Artwork
-        </h2>
-
-        <p>
-          A selection of digital artwork and sketches from my creative work.
-        </p>
+        <h2>My Artwork</h2>
+        <p>A selection of digital artwork and sketches from my creative work.</p>
       </div>
 
       <div class="artwork-grid">
-
         <div class="art-card">
-
-          <div
-            class="art-image"
-            onclick="openImageViewer('src/assets/FAA.png')"
-          >
-            <img
-              src="src/assets/FAA.png"
-              alt="Digital artwork"
-            />
+          <div class="art-image" onclick="openImageViewer('src/assets/FAA.png')">
+            <img src="src/assets/FAA.png" alt="Digital artwork" />
           </div>
 
           <div class="art-info">
-
-            <div class="art-tag">
-              Digital Art
-            </div>
-
-            <h3>
-              Character Artwork
-            </h3>
-
-            <p>
-              A digital artwork focusing on character design,
-              color, and visual expression.
-            </p>
-
+            <div class="art-tag">Digital Art</div>
+            <h3>Character Artwork</h3>
+            <p>A digital artwork focusing on character design, color, and visual expression.</p>
           </div>
         </div>
 
         <div class="art-card">
-
-          <div
-            class="art-image"
-            onclick="openImageViewer('src/assets/pie.png')"
-          >
-            <img
-              src="src/assets/pie.png"
-              alt="Digital illustration"
-            />
+          <div class="art-image" onclick="openImageViewer('src/assets/pie.png')">
+            <img src="src/assets/pie.png" alt="Digital illustration" />
           </div>
 
           <div class="art-info">
-
-            <div class="art-tag">
-              Illustration
-            </div>
-
-            <h3>
-              Digital Illustration
-            </h3>
-
-            <p>
-              An illustration exploring composition,
-              color, and creative visual ideas.
-            </p>
-
+            <div class="art-tag">Illustration</div>
+            <h3>Digital Illustration</h3>
+            <p>An illustration exploring composition, color, and creative visual ideas.</p>
           </div>
         </div>
 
         <div class="art-card">
-
-          <div
-            class="art-image"
-            onclick="openImageViewer('src/assets/sketch3.jpg')"
-          >
-            <img
-              src="src/assets/sketch3.jpg"
-              alt="Sketch artwork"
-            />
+          <div class="art-image" onclick="openImageViewer('src/assets/sketch3.jpg')">
+            <img src="src/assets/sketch3.jpg" alt="Sketch artwork" />
           </div>
 
           <div class="art-info">
-
-            <div class="art-tag">
-              Sketch
-            </div>
-
-            <h3>
-              Sketch Study
-            </h3>
-
-            <p>
-              A sketch exploring form, character ideas,
-              and visual development.
-            </p>
-
+            <div class="art-tag">Sketch</div>
+            <h3>Sketch Study</h3>
+            <p>A sketch exploring form, character ideas, and visual development.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <section id="skills" class="skills">
     <div class="container">
-
       <div class="section-title">
-        <h2>
-          Skills
-        </h2>
-
-        <p>
-          My creative skills and tools.
-        </p>
+        <h2>Skills</h2>
+        <p>My creative skills and tools.</p>
       </div>
 
       <div class="skills-grid">
-
         <div class="skill-card">
-          <h3>
-            Digital Art
-          </h3>
-
+          <h3>Digital Art</h3>
           <p>
-            Digital Illustration, Character Design,
-            Sketching, Visual Storytelling,
-            Composition, Color Theory
+            Digital Illustration, Character Design, Sketching,
+            Visual Storytelling, Composition, Color Theory
           </p>
         </div>
 
         <div class="skill-card">
-          <h3>
-            Tools
-          </h3>
-
-          <p>
-            Krita, Adobe Photoshop, ibisPaint
-          </p>
+          <h3>Tools</h3>
+          <p>Krita, Adobe Photoshop, ibisPaint</p>
         </div>
 
         <div class="skill-card">
-          <h3>
-            Other Skills
-          </h3>
-
+          <h3>Other Skills</h3>
           <p>
-            Creativity, Attention to Detail,
-            Problem Solving, Visual Communication
+            Creativity, Attention to Detail, Problem Solving,
+            Visual Communication
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
   <section id="resume" class="resume">
     <div class="container">
-
       <div class="section-title">
-        <h2>
-          Resume
-        </h2>
-
-        <p>
-          Learn more about my education, skills, projects,
-          and experience.
-        </p>
+        <h2>Resume</h2>
+        <p>Learn more about my education, skills, projects, and experience.</p>
       </div>
 
       <div class="resume-box">
-
-        <h3>
-          My Resume
-        </h3>
-
-        <p>
-          View my complete resume in PDF format.
-        </p>
+        <h3>My Resume</h3>
+        <p>View my complete resume in PDF format.</p>
 
         <a
           href="src/assets/Resume.pdf"
@@ -917,31 +769,20 @@
         >
           View Resume
         </a>
-
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="container">
-
       <div class="section-title">
-        <h2>
-          Contact
-        </h2>
-
-        <p>
-          Feel free to connect with me.
-        </p>
+        <h2>Contact</h2>
+        <p>Feel free to connect with me.</p>
       </div>
 
       <div class="contact-grid">
-
         <div class="contact-card">
-          <h3>
-            Email
-          </h3>
-
+          <h3>Email</h3>
           <p>
             <a href="mailto:rebatoeloisa@gmail.com">
               rebatoeloisa@gmail.com
@@ -950,10 +791,7 @@
         </div>
 
         <div class="contact-card">
-          <h3>
-            GitHub
-          </h3>
-
+          <h3>GitHub</h3>
           <p>
             <a
               href="https://github.com/zeeennnii"
@@ -964,29 +802,26 @@
             </a>
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>
-        © 2026 Eloisa Rebato · Digital Artist &amp; Aspiring Animator
-      </p>
+      <p>© 2026 Eloisa Rebato · Digital Artist &amp; Aspiring Animator</p>
     </div>
   </footer>
 
-  <!-- IMAGE VIEWER -->
-
+  <!-- Artwork image viewer -->
   <div
     id="imageViewer"
     class="image-viewer"
     onclick="closeImageViewer(event)"
+    aria-hidden="true"
   >
     <div class="image-viewer-content">
-
       <button
+        type="button"
         class="close-viewer"
         onclick="closeImageViewer()"
         aria-label="Close image"
@@ -994,12 +829,7 @@
         &times;
       </button>
 
-      <img
-        id="viewerImage"
-        src=""
-        alt="Artwork preview"
-      />
-
+      <img id="viewerImage" src="" alt="Artwork preview" />
     </div>
   </div>
 
@@ -1010,16 +840,12 @@
 
       viewerImage.src = imageSource;
       viewer.classList.add("active");
-
+      viewer.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
 
     function closeImageViewer(event) {
-      if (
-        event &&
-        event.target &&
-        event.target.id !== "imageViewer"
-      ) {
+      if (event && event.target !== document.getElementById("imageViewer")) {
         return;
       }
 
@@ -1027,14 +853,18 @@
       const viewerImage = document.getElementById("viewerImage");
 
       viewer.classList.remove("active");
+      viewer.setAttribute("aria-hidden", "true");
       viewerImage.src = "";
-
       document.body.style.overflow = "";
     }
 
     document.addEventListener("keydown", function(event) {
       if (event.key === "Escape") {
-        closeImageViewer();
+        const viewer = document.getElementById("imageViewer");
+
+        if (viewer.classList.contains("active")) {
+          closeImageViewer();
+        }
       }
     });
   </script>
